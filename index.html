@@ -1,12 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Shopping App</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="dexie.min.js"></script>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -14,49 +16,44 @@
         });
       }
     </script>
-  </head>
+</head>
 
-  <body>
+<body>
     <nav>
-      <p>My list</p>
+        <p>My list</p>
     </nav>
 
     <div class="container">
-      <form id="itemForm">
-        <label>
-          Name of Item:
-          <input type="text" id="nameInput" required>
-        </label>
+        <form id="itemForm">
+            <label for="nameInput">Name of Item:</label>
+            <input type="text" id="nameInput" required placeholder="Enter item name" title="Name of Item">
 
-        <label>
-          Quantity:
-          <input type="number" id="quantityInput" value=1>
-        </label>
+            <label for="quantityInput">Quantity:</label>
+            <input type="number" id="quantityInput" value="1" placeholder="Enter quantity" title="Quantity">
 
-        <label>
-          Price:
-          <input type="number" id="priceInput" value=0>
-        </label>
-        <button type="submit" id="addItemButton" >Add Item</button>
-        
-      </form>
-    
-<div id="itemsDiv">
-<div class="Item purchased">
-    <label> <input type="checkbox" class="checkbox" checked>
-</label>
+            <label for="priceInput">Price:</label>
+            <input type="number" id="priceInput" value="0" placeholder="Enter price" title="Price">
+            
+            <button type="submit" id="addItemButton">Add Item</button>
+        </form>
 
-<div class="itemInfo">
-    <p> Fruit Juice</p>
-    <p> $5 * 3 </p>
-</div>
+        <div id="itemsDiv">
+            <div class="Item purchased">
+                <label>
+                    <input type="checkbox" class="checkbox" checked>
+                </label>
 
-<button class="deleteButton"> X </button>
-</div>
-</div>
-</div>
-<div class="totalPriceDiv"><b>Total price: </b> </div>
+                <div class="itemInfo">
+                    <p>Fruit Juice</p>
+                    <p>$5 * 3</p>
+                </div>
+
+                <button class="deleteButton">X</button>
+            </div>
+        </div>
+    </div>
+    <div class="totalPriceDiv"><b>Total price:</b></div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
